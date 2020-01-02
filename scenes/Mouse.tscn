@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/Mouse.escn" type="PackedScene" id=1]
+[ext_resource path="res://src/Mouse.cs" type="Script" id=2]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+period = 2.8
+persistence = 1.0
+lacunarity = 1.49
+
+[sub_resource type="NoiseTexture" id=2]
+noise = SubResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = SubResource( 2 )
+emission_enabled = true
+emission = Color( 1, 1, 1, 1 )
+emission_energy = 0.2
+emission_operator = 0
+emission_on_uv2 = false
+
+[node name="Mouse" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="MousePhysics" parent="." index="0"]
+gravity_scale = 0.0
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="MouseCollision" parent="MousePhysics" index="0"]
+transform = Transform( -2.05165e-007, -0.79413, -1.62921e-007, 0, -1.2938e-007, 1, -1.2593, 1.2938e-007, 2.65431e-014, 0, 0, 0 )
+
+[node name="Mouse" parent="MousePhysics/MouseCollision" index="0"]
+material/0 = SubResource( 3 )
