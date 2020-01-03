@@ -4,8 +4,8 @@
 
 This application features the ability to simulate a mouse navigating around obstacles to find cheese.
 
-![index](https://user-images.githubusercontent.com/6654513/71701843-4df6a280-2d89-11ea-99c4-cc0f180798b8.png)
 ![][image_screenshot]
+![index](https://user-images.githubusercontent.com/6654513/71701843-4df6a280-2d89-11ea-99c4-cc0f180798b8.png)
 
 ## Application Compiling
 
